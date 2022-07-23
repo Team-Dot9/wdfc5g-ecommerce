@@ -50,49 +50,23 @@
 │       │       └── rtlStyle.js
 │       └── nextjs-material-dashboard.js
 ├── components
-│   ├── Card
-│   │   ├── Card.js
-│   │   ├── CardAvatar.js
-│   │   ├── CardBody.js
-│   │   ├── CardFooter.js
-│   │   ├── CardHeader.js
-│   │   └── CardIcon.js
-│   ├── CustomButtons
-│   │   └── Button.js
-│   ├── CustomInput
-│   │   └── CustomInput.js
-│   ├── CustomTabs
-│   │   └── CustomTabs.js
-│   ├── FixedPlugin
-│   │   └── FixedPlugin.js
-│   ├── Footer
-│   │   └── Footer.js
-│   ├── Grid
-│   │   ├── GridContainer.js
-│   │   └── GridItem.js
-│   ├── Navbars
-│   │   ├── AdminNavbarLinks.js
-│   │   ├── Navbar.js
-│   │   └── RTLNavbarLinks.js
-│   ├── PageChange
-│   │   └── PageChange.js
-│   ├── Sidebar
-│   │   └── Sidebar.js
-│   ├── Snackbar
-│   │   ├── Snackbar.js
-│   │   └── SnackbarContent.js
-│   ├── Table
-│   │   └── Table.js
-│   ├── Tasks
-│   │   └── Tasks.js
-│   └── Typography
-│       ├── Danger.js
-│       ├── Info.js
-│       ├── Muted.js
-│       ├── Primary.js
-│       ├── Quote.js
-│       ├── Success.js
-│       └── Warning.js
+│   ├── Header
+│   │   ├── Secondary
+│   │   │   ├── index.js
+│   │   │   ├── index.styles.scss
+│   │   │   ├── index.tests.js
+│   │   │   ├── ...
+│   │   ├── Primary
+│   │   │   ├── index.js
+│   │   │   ├── index.styles.scss
+│   │   │   ├── ...
+│   │   ├── NavigationBar
+│   │   │   ├── index.js
+│   │   │   ├── index.styles.scss
+│   │   │   ├── index.tests.js
+│   │   │   ├── ...
+│   ├── index.js
+│   ├── index.styles.scss
 ├── documentation
 │   ├── assets
 │   │   ├── css
@@ -105,29 +79,23 @@
 │   │       ├── bootstrap.min.js
 │   │       └── jquery-3.2.1.min.js
 │   └── tutorial-components.html
-├── layouts
-│   ├── Admin.js
-│   └── RTL.js
 ├── next.config.js
 ├── package.json
 ├── pages
 │   ├── _app.js
 │   ├── _document.js
 │   ├── _error.js
-│   ├── admin
-│   │   ├── dashboard.js
-│   │   ├── icons.js
-│   │   ├── maps.js
-│   │   ├── notifications.js
-│   │   ├── table-list.js
-│   │   ├── typography.js
-│   │   ├── upgrade-to-pro.js
-│   │   └── user-profile.js
+│   ├── profile
+│   │   ├── index.js
+│   │   ├── index.styles.scss
 │   ├── index.js
 │   └── rtl
 │       └── rtl-page.js
-├── routes.js
-└── variables
-    ├── charts.js
-    └── general.js
+|── styles
+|   ├── _var.scss
+|   ├── _global.scss
+|   └── components.scss
+|── utils
+|   ├── sanitizer.utils.js
+|   └── currency.js
 ```
