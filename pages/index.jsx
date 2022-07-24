@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Announcement from "../components/Announcement";
-import Discount from "../components/discount";
+import Discount from "../components/Discount";
 import FlashDeals from "../components/FlashDeals";
 import HomeHero from "../components/HomeHero";
 import Layout from "../components/Layout";
