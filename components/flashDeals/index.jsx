@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import { IconContext } from "react-icons";
+import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import Slider from "react-slick";
 import { productItems } from "../../store/Data.js";
+import ProductCard from "../Card/ProductCard/index.jsx";
 
 const SampleNextArrow = (props) => {
 	const { onClick } = props;
 	return (
 		<div className="control-btn" onClick={onClick}>
 			<button className="next">
-				<i className="fa fa-long-arrow-alt-right"></i>
+				<IconContext.Provider
+					value={{
+						style: { width: "25px", height: "25px", fontSize: "25px" },
+					}}>
+					<HiArrowSmRight />
+				</IconContext.Provider>
 			</button>
 		</div>
 	);
@@ -18,7 +26,12 @@ const SamplePrevArrow = (props) => {
 	return (
 		<div className="control-btn" onClick={onClick}>
 			<button className="prev">
-				<i className="fa fa-long-arrow-alt-left"></i>
+				<IconContext.Provider
+					value={{
+						style: { width: "25px", height: "25px", fontSize: "25px" },
+					}}>
+					<HiArrowSmLeft />
+				</IconContext.Provider>
 			</button>
 		</div>
 	);
@@ -41,7 +54,7 @@ const FlashDeals = ({ addToCart }) => {
 
 	return (
 		<>
-			<section className="flash">
+			<section className="e_flashDeal">
 				<div className="container">
 					{/* Header Start */}
 					<div className="heading f_flex">
@@ -52,45 +65,20 @@ const FlashDeals = ({ addToCart }) => {
 
 					{/* Body Start */}
 					<Slider {...settings}>
-						{productItems.map((productItems, i) => {
-							return (
-								<div key={i} className="box">
-									<div className="product mtop">
-										<div className="img">
-											<span className="discount">
-												{productItems.discount}% Off
-											</span>
-											<img src={productItems.cover} alt="" />
-											<div className="product-like">
-												<label>{count}</label> <br />
-												<i
-													className="fa-regular fa-heart"
-													onClick={increment}></i>
-											</div>
-										</div>
-										<div className="product-details">
-											<h3>{productItems.name}</h3>
-											<div className="rate">
-												<i className="fa fa-star"></i>
-												<i className="fa fa-star"></i>
-												<i className="fa fa-star"></i>
-												<i className="fa fa-star"></i>
-												<i className="fa fa-star"></i>
-											</div>
-											<div className="price">
-												<h4>${productItems.price}.00 </h4>
-												{/* step : 3  
-                     if hami le button ma click garryo bahne 
-                    */}
-												<button onClick={() => addToCart(productItems)}>
-													<i className="fa fa-plus"></i>
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							);
-						})}
+						{productItems.map((productItem, i) => (
+							<ProductCard
+								key={productItem.id}
+								id={productItem.id}
+								className="box"
+								title={productItem.name}
+								discount={productItem.discount}
+								thumbnail={productItem.cover}
+								price={productItem.price}
+								slug={productItem.name.split(" ").join("-").toLocaleLowerCase()}
+								addToCart={addToCart}
+								addToWishList={console.log}
+							/>
+						))}
 					</Slider>
 					{/* Body End */}
 				</div>

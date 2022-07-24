@@ -14,6 +14,11 @@ const DATA = [
 	},
 	{
 		_id: "",
+		title: "Wishlist",
+		url: "/profile/wishlist",
+	},
+	{
+		_id: "",
 		title: "Order Track",
 		url: "/profile/order-track",
 	},

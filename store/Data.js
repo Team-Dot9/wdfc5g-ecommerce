@@ -4,42 +4,60 @@ export const productItems = [
 		discount: 50,
 		cover: "/images/flash/flash-1.png",
 		name: "Shoes",
-		price: 100,
+		price: {
+			regular: 100.0,
+			special: 80.0,
+		},
 	},
 	{
 		id: 2,
 		discount: 40,
 		cover: "/images/flash/flash-2.png",
 		name: "Watch",
-		price: 20,
+		price: {
+			regular: 100.0,
+			special: "",
+		},
 	},
 	{
 		id: 3,
 		discount: 40,
 		cover: "/images/flash/flash-3.png",
 		name: "Smart Mobile Black",
-		price: 200,
+		price: {
+			regular: 2100.0,
+			special: 200.0,
+		},
 	},
 	{
 		id: 4,
 		discount: 40,
 		cover: "/images/flash/flash-4.png",
 		name: "Smart Watch Black",
-		price: 50,
+		price: {
+			regular: 100.0,
+			special: "",
+		},
 	},
 	{
 		id: 5,
 		discount: 50,
 		cover: "/images/flash/flash-1.png",
 		name: "Shoes",
-		price: 100,
+		price: {
+			regular: 100.0,
+			special: "",
+		},
 	},
 	{
 		id: 6,
 		discount: 50,
 		cover: "/images/flash/flash-3.png",
 		name: "Shoes",
-		price: 100,
+		price: {
+			regular: 600.0,
+			special: "",
+		},
 	},
 ];
 

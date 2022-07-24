@@ -13,7 +13,7 @@ const TopCategory = () => {
 
 	return (
 		<>
-			<section className="TopCate background">
+			<section className="e_topCate">
 				<div className="container">
 					<div className="heading d_flex">
 						<div className="heading-left row  f_flex">

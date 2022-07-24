@@ -1,0 +1,75 @@
+@import "../../../styles/var";
+
+.e_c_pcm {
+	min-width: 198px;
+	padding: 12px;
+	position: relative;
+	border-radius: 8px;
+	box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	background: #fff;
+	&:hover {
+	}
+
+	@at-root .pcm__thumbnail {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		display: block;
+		box-shadow: none;
+		cursor: unset;
+		border-radius: 8px;
+		margin-bottom: 0.5rem;
+		overflow: hidden;
+		transition: all 150ms ease-in-out 0s;
+		&:hover ::after {
+			content: "";
+			// width: 100%;
+			// height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 0.3;
+			background-color: $color-dark;
+
+			border-radius: 8px;
+		}
+		.pcm__img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.pcm__title {
+		margin-bottom: 4px;
+		color: $color-dark1;
+		font-size: 14px;
+		line-height: 21px;
+		a {
+			transition: color 150ms ease-in-out 0s;
+
+			&:hover {
+				color: $color-primary;
+			}
+		}
+	}
+
+	.pcm__price {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 8px;
+		font-size: 14px;
+		line-height: 21px;
+		.price__special {
+			color: $color-primary;
+			font-weight: 600;
+		}
+		.price__regular {
+			color: $color-dark;
+			&.price--del {
+				text-decoration: line-through;
+			}
+		}
+	}
+}

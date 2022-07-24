@@ -3,11 +3,26 @@
 	padding: 10px 0;
 	color: #fff;
 
-	i {
-		margin-right: 10px;
+	.topbar__left {
+		display: flex;
 	}
-	label {
-		margin-right: 30px;
-		font-size: 13px;
+
+	.topbar__right {
+		display: inline-block;
+	}
+
+	.topbar__link {
+		a {
+			cursor: pointer;
+			color: #fff;
+			margin-right: 30px;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 8px;
+			label {
+				font-size: 13px;
+			}
+		}
 	}
 }

@@ -1,11 +1,11 @@
 import { Badge, IconButton } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect } from "react";
 import { IconContext } from "react-icons";
 import { HiOutlineShoppingBag, HiUser } from "react-icons/hi";
 import SEARCH from "../../../assets/images/icon/search.svg";
 import LOGO from "../../../assets/images/logo.png";
-// import LOGO from "../../../assets/images/logo.svg";
 
 const SearchBar = ({ cartItem }) => {
 	useEffect(() => {
@@ -21,7 +21,11 @@ const SearchBar = ({ cartItem }) => {
 			<nav className="e_searchbar">
 				<div className="container">
 					<div className="searchbar__logo width ">
-						<Image src={LOGO} width={150} height={42.72} alt="" />
+						<Link href="/">
+							<a>
+								<Image src={LOGO} width={150} height={42.72} alt="" />
+							</a>
+						</Link>
 					</div>
 
 					<div className="searchbar__searchBox">
@@ -40,6 +44,9 @@ const SearchBar = ({ cartItem }) => {
 
 					<div className="searchbar__icons">
 						<IconContext.Provider value={{ style: { fontSize: "20px" } }}>
+							{/***
+							 * Strategy: If user logged in ? href value will be `/profile` else `/login`.
+							 */}
 							<IconButton
 								size="large"
 								aria-label="show cart"
@@ -50,18 +57,23 @@ const SearchBar = ({ cartItem }) => {
 								}}>
 								<HiUser />
 							</IconButton>
-							<IconButton
-								size="large"
-								aria-label="show cart"
-								color="inherit"
-								sx={{
-									height: "44px",
-									width: "44px",
-								}}>
-								<Badge badgeContent={4} color="error">
-									<HiOutlineShoppingBag />
-								</Badge>
-							</IconButton>
+
+							<Link href="/cart">
+								<a>
+									<IconButton
+										size="large"
+										aria-label="show cart"
+										color="inherit"
+										sx={{
+											height: "44px",
+											width: "44px",
+										}}>
+										<Badge badgeContent={4} color="error">
+											<HiOutlineShoppingBag />
+										</Badge>
+									</IconButton>
+								</a>
+							</Link>
 						</IconContext.Provider>
 					</div>
 				</div>

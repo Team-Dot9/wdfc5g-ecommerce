@@ -1,18 +1,35 @@
+import Link from "next/link";
 import React from "react";
+import { HiOutlineMail } from "react-icons/hi";
+import { RiPhoneLine } from "react-icons/ri";
+import { info } from "../../../store/constant.store";
 
 const TopBar = () => {
 	return (
 		<>
 			<section className="e_topbar">
 				<div className="container d_flex">
-					<div className="left row">
-						<i className="fa fa-phone"></i>
-						<label> +88012 3456 7894</label>
-						<i className="fa fa-envelope"></i>
-						<label> support@ui-lib.com</label>
+					<div className="topbar__left">
+						<div className="topbar__link topbar__phone">
+							<Link href={`tel:${info?.phone}`}>
+								<a>
+									<RiPhoneLine />
+									<label>{info?.phone}</label>
+								</a>
+							</Link>
+						</div>
+
+						<div className="topbar__link topbar__email">
+							<Link href={`mailto:${info?.email}`}>
+								<a>
+									<HiOutlineMail />
+									<label>{info?.email}</label>
+								</a>
+							</Link>
+						</div>
 					</div>
 
-					<div className="right row RText">
+					<div className="topbar__right RText">
 						{/* <label>Theme FAQ's</label> */}
 						<label>Need Help?</label>
 					</div>

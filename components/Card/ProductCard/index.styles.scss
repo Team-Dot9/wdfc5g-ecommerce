@@ -1,0 +1,94 @@
+@import "../../../styles/var";
+
+.e_c_productCard {
+	background: #fff;
+	padding: 20px;
+	position: relative;
+	border-radius: 8px;
+	box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	margin: 10px;
+	&:hover {
+		.productCard__like {
+			opacity: 1;
+		}
+	}
+
+	.productCard__like {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 10px;
+		opacity: 0;
+		transition: 0.5s;
+	}
+
+	@at-root .productCard__discount {
+		display: inline-flex;
+		border-radius: 300px;
+		cursor: unset;
+		box-shadow: unset;
+		transition: all 150ms ease-in-out 0s;
+		padding: 5px 10px;
+		background-color: $color-primary;
+		color: rgb(255, 255, 255);
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		font-size: 10px;
+		font-weight: 600;
+	}
+	@at-root .productCard__thumbnail {
+	}
+
+	.productCard__title {
+		color: $color-dark;
+		font-size: 14px;
+		line-height: 21px;
+		font-weight: 600;
+		a {
+			transition: color 150ms ease-in-out 0s;
+
+			&:hover {
+				color: $color-primary;
+			}
+		}
+	}
+
+	.productCard__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: $color-primary;
+	}
+	.productCard__price {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 8px;
+		font-size: 14px;
+		line-height: 21px;
+		.price__special {
+			color: $color-primary;
+		}
+		.price__regular {
+			color: $color-dark;
+		}
+	}
+
+	.productCard__footer button {
+		width: 35px;
+		height: 35px;
+		color: $color-primary;
+		font-size: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.3s;
+		background: none;
+		border: 1px solid rgb(3 0 71 / 9%);
+		border-radius: 5px;
+	}
+	.productCard__footer button:hover {
+		cursor: pointer;
+		background-color: $color-primary;
+	}
+}

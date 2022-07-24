@@ -42,7 +42,7 @@ const HeroAdSlider = () => {
 
 	return (
 		<>
-			<section className="homeSlide contentWidth">
+			<section className="e_heroSlider contentWidth">
 				<div className="container">
 					<Slider {...settings}>
 						{S_DATA.map((value, index) => {
