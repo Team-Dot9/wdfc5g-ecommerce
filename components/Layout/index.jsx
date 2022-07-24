@@ -1,5 +1,6 @@
 import React from "react";
-import { Header } from "../Header";
+import Footer from "../footer";
+import Header from "../Header";
 
 const cartItem = [
 	{
@@ -18,6 +19,8 @@ const Layout = ({ children }) => {
 			<Header cartItem={cartItem} />
 
 			<main>{children}</main>
+
+			<Footer />
 		</>
 	);
 };

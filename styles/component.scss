@@ -1,11 +1,20 @@
+// Header
+@import "../components/Header/TopBar/index.styles.scss";
+@import "../components/Header/SearchBar/index.styles.scss";
+@import "../components/Header/Navbar/index.styles.scss";
 @import "../components/Header/index.styles.scss";
 
+// Footer
+@import "../components/footer/index.styles.scss";
+
+// Landing Page
 @import "../components/HomeHero/index.styles.scss";
-
+@import "../components/HeroCategories/index.styles.scss";
 @import "../components/flashDeals/index.styles.scss";
-
 @import "../components/wrapper/index.styles.scss";
-
 @import "../components/TopCategory/index.styles.scss";
-
 @import "../components/NewArrivals/index.styles.scss";
+@import "../components/shops/index.styles.scss";
+
+// Cart
+@import "../pages/cart/index.styles.scss";

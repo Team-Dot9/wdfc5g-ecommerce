@@ -1,0 +1,138 @@
+@use "../../styles/var";
+
+.e_cart {
+	background: #f6f9fc;
+	height: auto;
+	padding: 50px 0;
+
+	@at-root .cart__items {
+		width: 70%;
+	}
+
+	@at-root .cart__total {
+		width: 30%;
+		margin-top: 30px;
+		margin-left: 30px;
+		height: 130px;
+	}
+
+	@at-root .cart__item {
+		margin-bottom: 24px;
+		display: flex;
+		justify-content: flex-start;
+		background: white;
+		box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+
+		@at-root .cart__item__img {
+			width: 140px;
+			height: 140px;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+
+		@at-root .cart__item__details {
+			width: calc(100% - 140px);
+			position: relative;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			.cart__item__title {
+				color: #2b3445;
+				font-size: 18px;
+				line-height: 27px;
+			}
+
+			.cart__item__footer {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+
+				p {
+					color: #7d879c;
+					font-size: 14px;
+					line-height: 21px;
+				}
+			}
+		}
+	}
+
+	.e_cart .e_cart .cart__itemsh3 {
+		font-size: 20px;
+		font-weight: 500;
+		margin-top: 20px;
+	}
+	.e_cart .cart__itemsh4 {
+		font-size: 15px;
+		font-weight: 400;
+		margin-top: 50px;
+		color: grey;
+	}
+	.e_cart h4 span {
+		color: #e94560;
+		margin-left: 20px;
+		font-weight: 500;
+	}
+	.cart__item__remove {
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-size: 25px;
+		background: none;
+	}
+	.cart__item__counter {
+		button {
+			width: 32px;
+			height: 32px;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 20px;
+		}
+		input {
+			height: 32px;
+			width: 40px;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+
+	.incCart {
+		background: none;
+		border: 1px solid rgb(3 0 71 / 9%);
+		color: #e94560;
+	}
+	.desCart {
+		background: #f6f9fc;
+	}
+	.cart__total h4 {
+		font-size: 15px;
+		font-weight: 400;
+	}
+	.cart__total h3 {
+		font-size: 20px;
+		font-weight: 500;
+		color: #e94560;
+	}
+	.cart__total h2 {
+		font-size: 18px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid rgb(3 0 71 / 9%);
+		padding-bottom: 10px;
+		color: #e94560;
+	}
+	.no-items {
+		color: #e94560;
+		font-size: 18px;
+		margin-top: 30px;
+		height: 130px;
+	}
+}

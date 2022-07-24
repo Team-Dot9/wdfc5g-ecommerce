@@ -1,0 +1,106 @@
+.e_searchbar {
+	padding: 10px 0;
+	&.active {
+		// height: 12vh;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		width: 100%;
+		background-color: #fff;
+		box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
+		transition: 0.5s;
+
+		.searchbar__logo {
+			height: 38px;
+			width: auto;
+		}
+		.searchbar__searchBox {
+			height: 38px;
+			input,
+			.searchbar__searchBox__categories {
+				height: 38px;
+			}
+		}
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		justify-content: space-between;
+	}
+
+	@at-root .searchbar__logo {
+		margin-right: 16px;
+		img {
+			width: auto;
+			height: auto;
+		}
+	}
+
+	@at-root .searchbar__searchBox {
+		max-width: 670px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		display: flex;
+		cursor: unset;
+		flex-direction: row;
+		-webkit-box-pack: center;
+		justify-content: center;
+		align-items: center;
+		flex: 1 1 0px;
+		color: rgb(43, 52, 69);
+		::placeholder {
+			font-size: 15px;
+		}
+		@at-root .searchbar__searchBox__icon {
+			position: absolute;
+			color: rgb(125, 135, 156);
+			left: 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 1;
+			cursor: unset;
+		}
+		@at-root .searchbar__searchBox__search {
+			width: 100%;
+			position: relative;
+			cursor: unset;
+			input {
+				width: 100%;
+				height: 44px;
+				flex: 1 1 0px;
+				padding: 8px 11.5rem 6px 3rem;
+				color: rgb(43, 52, 69);
+				border: 1px solid rgb(218, 225, 231);
+				border-radius: 300px;
+				outline: none;
+				&:hover {
+					border-color: rgb(174, 180, 190);
+				}
+				&:active,
+				&:focus {
+					outline-color: rgb(233, 69, 96);
+					border-color: rgb(233, 69, 96);
+					box-shadow: rgb(255 225 230 / 10%) 1px 1px 8px 4px;
+				}
+			}
+		}
+		@at-root .searchbar__searchBox__categories {
+			width: 20%;
+			padding: 10px;
+			position: absolute;
+			right: 0px;
+			color: rgb(125, 135, 156);
+			font-size: 14px;
+			line-height: 21px;
+			border-left: 1px solid rgb(218, 225, 231);
+		}
+	}
+
+	@at-root .searchbar__icons {
+	}
+}

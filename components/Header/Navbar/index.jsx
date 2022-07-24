@@ -1,61 +1,58 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
+const DATA = [
+	{
+		_id: "",
+		title: "Home",
+		url: "/",
+	},
+	{
+		_id: "",
+		title: "Shop",
+		url: "/shop",
+	},
+	{
+		_id: "",
+		title: "Order Track",
+		url: "/profile/order-track",
+	},
+	{
+		_id: "",
+		title: "About Us",
+		url: "/about-us",
+	},
+];
+
 const Navbar = () => {
 	// Toggle Menu
 	const [MobileMenu, setMobileMenu] = useState(false);
+
 	return (
 		<>
-			<header className="header">
-				<div className="container d_flex">
-					<div className="catgrories d_flex">
-						<span className="fa-solid fa-border-all"></span>
-						<h4>
-							Categories <i className="fa fa-chevron-down"></i>
-						</h4>
-					</div>
-
-					<div className="navlink">
-						<ul
-							className={
-								MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"
-							}
-							onClick={() => setMobileMenu(false)}>
-							{/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
-							<li>
-								<Link href="/">
-									<a>home</a>
+			<nav className="e_navbar">
+				<div className="container">
+					<ul className="navbar__menu" onClick={() => setMobileMenu(false)}>
+						{DATA.map((item) => (
+							<li key={item._id}>
+								<Link href={item.url}>
+									<a>{item.title}</a>
 								</Link>
 							</li>
-							<li>
-								<Link to="/pages">pages</Link>
-							</li>
-							<li>
-								<Link to="/user">user account</Link>
-							</li>
-							<li>
-								<Link to="/vendor">vendor account</Link>
-							</li>
-							<li>
-								<Link to="/track">track my order</Link>
-							</li>
-							<li>
-								<Link to="/contact">contact</Link>
-							</li>
-						</ul>
+						))}
+					</ul>
 
-						<button
-							className="toggle"
-							onClick={() => setMobileMenu(!MobileMenu)}>
-							{MobileMenu ? (
-								<i className="fas fa-times close home-btn"></i>
-							) : (
-								<i className="fas fa-bars open"></i>
-							)}
-						</button>
-					</div>
+					<button
+						className="navbar__toggle"
+						onClick={() => setMobileMenu(!MobileMenu)}>
+						{MobileMenu ? (
+							<i className="fas fa-times close home-btn"></i>
+						) : (
+							<i className="fas fa-bars open"></i>
+						)}
+					</button>
 				</div>
-			</header>
+			</nav>
 		</>
 	);
 };

@@ -1,0 +1,35 @@
+.e_heroCat {
+	box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+	background-color: #fff;
+	width: 23%;
+	height: 510px;
+	padding: 15px 0;
+	border-radius: 5px;
+	margin-top: 5px;
+
+	.heroCat__item {
+		transition: 0.5s;
+		padding: 0 20px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.heroCat__item:hover {
+		background-color: #e0ffef;
+		cursor: pointer;
+		.heroCat__title {
+			color: rgb(38, 224, 127);
+		}
+	}
+
+	.heroCat__img {
+		width: 30px;
+		height: 30px;
+		object-fit: contain;
+	}
+	.heroCat__title {
+		margin: 10px 20px;
+		color: #473749;
+		text-transform: capitalize;
+	}
+}

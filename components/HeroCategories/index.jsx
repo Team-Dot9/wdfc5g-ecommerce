@@ -1,64 +1,78 @@
+import Link from "next/link";
 import React from "react";
 
 const data = [
 	{
-		cateImg: "./images/category/cat1.png",
-		cateName: "Fashion",
+		img: "./images/category/cat1.png",
+		title: "Fashion",
+		url: "/fashion",
 	},
 	{
-		cateImg: "./images/category/cat2.png",
-		cateName: "Electronic",
+		img: "./images/category/cat2.png",
+		title: "Electronic",
+		url: "/electronic",
 	},
 	{
-		cateImg: "./images/category/cat3.png",
-		cateName: "Cars",
+		img: "./images/category/cat3.png",
+		title: "Cars",
+		url: "/cars",
 	},
 	{
-		cateImg: "./images/category/cat4.png",
-		cateName: "Home & Garden",
+		img: "./images/category/cat4.png",
+		title: "Home & Garden",
+		url: "/home-and-garden",
 	},
 	{
-		cateImg: "./images/category/cat5.png",
-		cateName: "Gifts",
+		img: "./images/category/cat5.png",
+		title: "Gifts",
+		url: "/gifts",
 	},
 	{
-		cateImg: "./images/category/cat6.png",
-		cateName: "Music",
+		img: "./images/category/cat6.png",
+		title: "Music",
+		url: "/music",
 	},
 	{
-		cateImg: "./images/category/cat7.png",
-		cateName: "Health & Beauty",
+		img: "./images/category/cat7.png",
+		title: "Health & Beauty",
+		url: "/health-and-beauty",
 	},
 	{
-		cateImg: "./images/category/cat8.png",
-		cateName: "Pets",
+		img: "./images/category/cat8.png",
+		title: "Pets",
+		url: "/pets",
 	},
 	{
-		cateImg: "./images/category/cat9.png",
-		cateName: "Baby Toys",
+		img: "./images/category/cat9.png",
+		title: "Baby Toys",
+		url: "/baby-toys",
 	},
 	{
-		cateImg: "./images/category/cat10.png",
-		cateName: "Groceries",
+		img: "./images/category/cat10.png",
+		title: "Groceries",
+		url: "/groceries",
 	},
 	{
-		cateImg: "./images/category/cat11.png",
-		cateName: "Books",
+		img: "./images/category/cat11.png",
+		title: "Books",
+		url: "/books",
 	},
 ];
 
 const HeroCategories = () => {
 	return (
 		<>
-			<div className="category">
-				{data.map((value, index) => {
-					return (
-						<div className="box f_flex" key={index}>
-							<img src={value.cateImg} alt="" />
-							<span>{value.cateName}</span>
-						</div>
-					);
-				})}
+			<div className="e_heroCat">
+				{data.map((value, i) => (
+					<Link key={i} href={value.url}>
+						<a>
+							<div className="heroCat__item f_flex">
+								<img className="heroCat__img" src={value.img} alt="" />
+								<span className="heroCat__title">{value.title}</span>
+							</div>
+						</a>
+					</Link>
+				))}
 			</div>
 		</>
 	);
