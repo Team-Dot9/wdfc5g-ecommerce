@@ -1,4 +1,5 @@
 // Component
+@import "../components/Container/index.styles.scss";
 @import "../components/Card/ProductCard/index.styles.scss";
 @import "../components/WidgetSection/index.styles.scss";
 @import "../components/Card/ProductCardMini/index.styles.scss";
@@ -22,6 +23,7 @@
 @import "../components/NewArrivals/index.styles.scss";
 @import "../components/Discount/index.styles.scss";
 @import "../components/shops/index.styles.scss";
+@import "../components/BrandAndShop/index.styles.scss";
 
 // Cart
 @import "../pages/cart/index.styles.scss";

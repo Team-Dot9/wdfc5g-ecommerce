@@ -42,27 +42,29 @@ const HeroAdSlider = () => {
 
 	return (
 		<>
-			<section className="e_heroSlider contentWidth">
+			<section className="e_heroSlider">
+				{/* <Container> */}
 				<div className="container">
 					<Slider {...settings}>
-						{S_DATA.map((value, index) => {
-							return (
-								<>
-									<div className="box d_flex top" key={index}>
-										<div className="left">
-											<h1>{value.title}</h1>
-											<p>{value.desc}</p>
-											<button className="btn-primary">Visit Collections</button>
-										</div>
-										<div className="right">
-											<img src={value.cover} alt="" />
-										</div>
+						{S_DATA.map((value, index) => (
+							<>
+								<div className="hs__slide box d_flex top" key={index}>
+									<div className="hs__left">
+										<h1 className="hs__title">{value.title}</h1>
+										<p className="hs_desc">{value.desc}</p>
+										<button className="btn-primary hs__button">
+											Visit Collections
+										</button>
 									</div>
-								</>
-							);
-						})}
+									<div className="hs__right">
+										<img className="hs__img" src={value.cover} alt="" />
+									</div>
+								</div>
+							</>
+						))}
 					</Slider>
 				</div>
+				{/* </Container> */}
 			</section>
 		</>
 	);

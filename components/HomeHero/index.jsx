@@ -1,15 +1,16 @@
 import React from "react";
+import Container from "../Container";
 import HeroAdSlider from "../HeroAdSlider";
 import HeroCategories from "../HeroCategories";
 
 const HomeHero = () => {
 	return (
 		<>
-			<section className="home">
-				<div className="container d_flex">
+			<section className="e_homeHero">
+				<Container>
 					<HeroCategories />
 					<HeroAdSlider />
-				</div>
+				</Container>
 			</section>
 		</>
 	);

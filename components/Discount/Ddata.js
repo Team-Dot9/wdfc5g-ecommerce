@@ -1,48 +1,63 @@
 const Ddata = [
 	{
-		cover: "images/discount/discount-1.png",
-		name: "BenuX 2022",
-		price: "$250",
+		id: 1,
+		discount: 50,
+		cover: "/images/flash/flash-1.png",
+		name: "Shoes",
+		price: {
+			regular: 100.0,
+			special: 80.0,
+		},
 	},
 	{
-		cover: "images/discount/discount-2.png",
-		name: "Sony TV 1080p",
-		price: "$450",
+		id: 2,
+		discount: 40,
+		cover: "/images/flash/flash-2.png",
+		name: "Watch",
+		price: {
+			regular: 100.0,
+			special: "",
+		},
 	},
 	{
-		cover: "images/discount/discount-3.png",
-		name: "Sony PS4",
-		price: "$50",
+		id: 3,
+		discount: 40,
+		cover: "/images/flash/flash-3.png",
+		name: "Smart Mobile Black",
+		price: {
+			regular: 2100.0,
+			special: 200.0,
+		},
 	},
 	{
-		cover: "images/discount/discount-4.png",
-		name: "Setgearr 2022",
-		price: "$100",
+		id: 4,
+		discount: 40,
+		cover: "/images/flash/flash-4.png",
+		name: "Smart Watch Black",
+		price: {
+			regular: 100.0,
+			special: "",
+		},
 	},
 	{
-		cover: "images/discount/discount-5.png",
-		name: "Tony BGB",
-		price: "$20",
+		id: 5,
+		discount: 50,
+		cover: "/images/flash/flash-1.png",
+		name: "Shoes",
+		price: {
+			regular: 100.0,
+			special: "",
+		},
 	},
 	{
-		cover: "images/discount/discount-6.png",
-		name: "RG products",
-		price: "$200",
-	},
-	{
-		cover: "images/discount/discount-7.png",
-		name: "Ranasonic 2022",
-		price: "$300",
-	},
-	{
-		cover: "images/discount/discount-8.png",
-		name: "Pune HD",
-		price: "$30",
-	},
-	{
-		cover: "images/discount/discount-9.png",
-		name: "Sony CCTV",
-		price: "$80",
+		id: 6,
+		discount: 50,
+		cover: "/images/flash/flash-3.png",
+		name: "Shoes",
+		price: {
+			regular: 600.0,
+			special: "",
+		},
 	},
 ];
 export default Ddata;
