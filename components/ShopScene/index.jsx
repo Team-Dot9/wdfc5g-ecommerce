@@ -1,14 +1,14 @@
 import React from "react";
 import { productItems } from "../../store/Data";
-import BrandAndShop from "../BrandAndShop";
 import ProductCard from "../Card/ProductCard";
+import SideMenu from "../SideMenu";
 
-const Shop = ({ addToCart, shopItems }) => {
+const ShopScene = ({ addToCart, shopItems }) => {
 	return (
 		<>
 			<section className="shop">
 				<div className="container d_flex">
-					<BrandAndShop />
+					<SideMenu />
 
 					<div className="contentWidth">
 						<div className="heading d_flex">
@@ -45,4 +45,4 @@ const Shop = ({ addToCart, shopItems }) => {
 	);
 };
 
-export default Shop;
+export default ShopScene;

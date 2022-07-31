@@ -5,7 +5,7 @@ const Footer = () => {
 			<footer>
 				<div className="container grid2">
 					<div className="box">
-						<h1>Bonik</h1>
+						<h1>5G Shop</h1>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
 							libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat

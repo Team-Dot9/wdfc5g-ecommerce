@@ -27,14 +27,13 @@ const data = [
 	},
 ];
 
-const BrandAndShop = () => {
+const SideMenu = () => {
 	return (
 		<>
 			<div className="e_bas">
 				<div className="bas__wrapper">
 					<div className="bas__head d_flex">
 						<h1>Brands </h1>
-						<h1>Shops </h1>
 					</div>
 
 					<div className="bas__body">
@@ -54,4 +53,4 @@ const BrandAndShop = () => {
 	);
 };
 
-export default BrandAndShop;
+export default SideMenu;

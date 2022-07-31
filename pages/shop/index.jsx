@@ -1,17 +1,11 @@
 import Head from "next/head";
 import { useState } from "react";
-import Announcement from "../components/Announcement";
-import Discount from "../components/Discount";
-import FlashDeals from "../components/FlashDeals";
-import HomeHero from "../components/HomeHero";
-import Layout from "../components/Layout";
-import NewArrivals from "../components/NewArrivals";
-import ShopScene from "../components/ShopScene";
-import TopCategory from "../components/TopCategory";
-import Wrapper from "../components/Wrapper";
-import { shopItems } from "../store/Data";
+import Layout from "../../components/Layout";
+import ShopScene from "../../components/ShopScene";
+import Wrapper from "../../components/Wrapper";
+import { shopItems } from "../../store/Data";
 
-const Home = () => {
+const Shop = () => {
 	const [cartItem, setCartItem] = useState([]);
 
 	const addToCart = (product) => {
@@ -70,18 +64,11 @@ const Home = () => {
 			</Head>
 
 			<Layout cart={cartItem}>
-				<HomeHero />
-				<FlashDeals addToCart={addToCart} />
-				<TopCategory />
-				<NewArrivals />
-				<Discount />
 				<ShopScene shopItems={shopItems} addToCart={addToCart} />
-				<ShopScene shopItems={shopItems} addToCart={addToCart} />
-				<Announcement />
 				<Wrapper />
 			</Layout>
 		</>
 	);
 };
 
-export default Home;
+export default Shop;
