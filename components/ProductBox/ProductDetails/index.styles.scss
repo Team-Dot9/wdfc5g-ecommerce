@@ -1,0 +1,51 @@
+@import "../../../styles/var";
+
+.e_spd {
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	position: relative;
+	display: block;
+	.spd__title {
+		margin-bottom: 10px;
+		color: #2b3445;
+		font-size: 30px;
+		line-height: 45px;
+		font-weight: 700;
+	}
+	.spd__brand {
+	}
+	.spd__description {
+		margin-top: 8px;
+		color: #2b3445;
+		font-size: 15px;
+		line-height: auto;
+	}
+	.spd__price {
+		margin-top: 16px;
+		color: $color-primary;
+		font-size: 25px;
+		line-height: 25px;
+		font-weight: 700;
+	}
+	.spd__quantity {
+	}
+	.spd__actions {
+	}
+	.spd__cart {
+	}
+	.spd__wishlist {
+	}
+
+	// Key-Value
+	.spd__key {
+		color: #7d879c;
+		font-size: 14px;
+		line-height: 21px;
+	}
+	.spd__value {
+		color: #2b3445s;
+		font-size: 14px;
+		line-height: 21px;
+	}
+}

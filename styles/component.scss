@@ -27,3 +27,9 @@
 
 // Cart
 @import "../pages/cart/index.styles.scss";
+
+// Single Product
+@import "../components/ProductBox/index.styles.scss";
+@import "../components/ProductBox/ProductThumbnail/index.styles.scss";
+@import "../components/ProductBox/ProductDetails/index.styles.scss";
+@import "../components/ProductBox/DeliveryOptions/index.styles.scss";

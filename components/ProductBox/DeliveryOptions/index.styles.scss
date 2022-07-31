@@ -1,0 +1,45 @@
+.e_pdo {
+	width: 100%;
+	max-width: 400px;
+	padding: 15px;
+	background-color: #fbf9f9;
+	.pdo__title {
+		color: #6a7180;
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	.pdo__item {
+		margin-top: 10px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 10px;
+		.pdo__key {
+			width: 18px;
+		}
+		.pdo__value {
+			width: calc(100% - 28px);
+			color: #6a7180;
+			font-size: 14px;
+			line-height: 20px;
+
+			select,
+			input {
+				margin-right: 10px;
+				padding: 4px;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.pdo__city {
+		.btn__city {
+			margin-left: 20px;
+			color: $color-primary;
+			font-weight: 600;
+			cursor: pointer;
+			background: transparent;
+		}
+	}
+}
