@@ -1,0 +1,31 @@
+@import "../../../styles/var";
+
+.account__sidebar {
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	border-radius: 8px;
+	color: rgb(43, 52, 69);
+
+	.sidebar__list {
+	}
+	.sidebar__list__item {
+		border-left: 4px solid transparent;
+		&:hover {
+			border-color: $color-primary;
+			color: $color-primary;
+
+			.sidebar__list__icon {
+				color: $color-primary;
+			}
+		}
+		.sidebar__list__title {
+			font-size: 14px;
+			line-height: 21px;
+			span {
+				color: inherit;
+				font-size: inherit;
+				line-height: inherit;
+			}
+		}
+	}
+}

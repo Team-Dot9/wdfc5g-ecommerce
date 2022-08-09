@@ -74,6 +74,40 @@ button {
 	box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
 
+// From
+.form__input__wrapper {
+	position: relative;
+	width: 100%;
+	margin-bottom: 0.75rem;
+}
+label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 0.875rem;
+}
+input {
+	padding: 8px 12px;
+	height: 40px;
+	font-size: inherit;
+	color: rgb(43, 52, 69);
+	border-radius: 5px;
+	border: 1px solid rgb(218, 225, 231);
+	width: 100%;
+	outline: none;
+	font-family: inherit;
+}
+.form__error {
+	display: block;
+	color: rgb(233, 69, 96);
+	margin-top: 0.25rem;
+	margin-left: 0.25rem;
+}
+
+// Link
+.e_link {
+	cursor: pointer;
+}
+
 /*---------category----------*/
 .contentWidth {
 	width: 77%;

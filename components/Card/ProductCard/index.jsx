@@ -37,7 +37,7 @@ const ProductCard = ({
 
 				<div className="product-details">
 					<h3 className="productCard__title">
-						<Link href={`/category/${slug}`}>
+						<Link href={`/shop/${slug}`}>
 							<a>{title}</a>
 						</Link>
 					</h3>

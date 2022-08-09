@@ -1,0 +1,20 @@
+.account__body {
+	position: relative;
+	padding: 0.75rem;
+	// background-color: rgb(255, 255, 255);
+	// box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	// border-radius: 8px;
+	& > .acb__header {
+		color: rgb(43, 52, 69);
+	}
+	.acb__title {
+		font-size: 25px;
+		line-height: 1;
+		margin-bottom: 0px;
+		margin-top: 0px;
+		font-weight: bold;
+		margin-left: 12px;
+	}
+	& > .acb__body {
+	}
+}

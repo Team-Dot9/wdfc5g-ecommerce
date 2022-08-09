@@ -7,7 +7,7 @@ import { HiOutlineShoppingBag, HiUser } from "react-icons/hi";
 import SEARCH from "../../../assets/images/icon/search.svg";
 import LOGO from "../../../assets/images/logo.png";
 
-const SearchBar = ({ cartItem }) => {
+const SearchBar = ({ cartItem, onAvatarClick }) => {
 	useEffect(() => {
 		// fixed Header
 		window.addEventListener("scroll", function () {
@@ -54,7 +54,8 @@ const SearchBar = ({ cartItem }) => {
 								sx={{
 									height: "44px",
 									width: "44px",
-								}}>
+								}}
+								onClick={onAvatarClick}>
 								<HiUser />
 							</IconButton>
 

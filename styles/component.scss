@@ -33,3 +33,16 @@
 @import "../components/ProductBox/ProductThumbnail/index.styles.scss";
 @import "../components/ProductBox/ProductDetails/index.styles.scss";
 @import "../components/ProductBox/DeliveryOptions/index.styles.scss";
+
+// Account Page
+@import "../pages/account/index.styles.scss";
+@import "../components/account/Sidebar/index.styles.scss";
+@import "../components/account/AccountBody/index.styles.scss";
+@import "../components/account/AccountWeight/index.styles.scss";
+
+// Auth
+@import "../components/Auth/LogIn/index.styles.sass";
+@import "../components/Auth/AuthSuccess/index.styles.scss";
+@import "../components/Auth/recover/index.styles.sass";
+@import "../components/Auth/Register/index.styles.sass";
+@import "../components/Auth/index.styles.scss";

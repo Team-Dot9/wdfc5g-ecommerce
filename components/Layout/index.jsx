@@ -13,12 +13,12 @@ const cartItem = [
 	},
 ];
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
 	return (
 		<>
 			<Header cartItem={cartItem} />
 
-			<main>{children}</main>
+			<main className={className}>{children}</main>
 
 			<Footer />
 		</>

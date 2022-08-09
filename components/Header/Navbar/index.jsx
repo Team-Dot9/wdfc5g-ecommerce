@@ -38,8 +38,8 @@ const Navbar = () => {
 			<nav className="e_navbar">
 				<div className="container">
 					<ul className="navbar__menu" onClick={() => setMobileMenu(false)}>
-						{DATA.map((item) => (
-							<li key={item._id}>
+						{DATA.map((item, i) => (
+							<li key={i}>
 								<Link href={item.url}>
 									<a>{item.title}</a>
 								</Link>

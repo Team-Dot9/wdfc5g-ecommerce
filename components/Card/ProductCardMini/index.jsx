@@ -28,7 +28,7 @@ const ProductCardMini = ({
 				</div>
 
 				<h3 className="pcm__title">
-					<Link href={`/category/${slug}`}>
+					<Link href={`/shop/${slug}`}>
 						<a>{title}</a>
 					</Link>
 				</h3>
