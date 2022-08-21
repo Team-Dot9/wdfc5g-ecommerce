@@ -1,0 +1,18 @@
+.e_dashboard__stats {
+	width: 100%;
+	@at-root .e_stats__card {
+		box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	}
+	@at-root .e_stats__card__content {
+	}
+	@at-root .e_stats__card__title {
+		font-size: 14px;
+		line-height: 22px;
+		color: rgba(0, 0, 0, 0.45);
+	}
+	@at-root .e_stats__card__counter {
+		font-size: 34px;
+		line-height: 38px;
+		color: #3f8600;
+	}
+}

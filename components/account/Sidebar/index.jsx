@@ -6,18 +6,28 @@ import {
 	ListItemText,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { IconContext } from "react-icons";
-import { AiOutlineHeart } from "react-icons/ai";
-import { BsGearFill } from "react-icons/bs";
+import { AiOutlineDashboard, AiOutlineHeart } from "react-icons/ai";
+import { BsFillPeopleFill, BsGearFill } from "react-icons/bs";
 import { HiOutlineShoppingBag, HiUser } from "react-icons/hi";
+import { ImExit } from "react-icons/im";
 import { TbClipboardList } from "react-icons/tb";
 
 const SidebarItem = ({ className, item }) => {
+	const router = useRouter();
+
+	const updateRouteHandler = (slug) => {
+		const url = `/account#${slug}`;
+		return router.push(url);
+	};
+
 	return (
 		<ListItem
 			key={item.id}
 			className={`sidebar__list__item ${className && className}`}
+			onClick={() => updateRouteHandler(item.slug)}
 			disablePadding>
 			<ListItemButton>
 				<ListItemIcon className="sidebar__list__icon" sx={{ minWidth: "35px" }}>
@@ -34,10 +44,10 @@ const AccountSidebar = () => {
 	const LIST = [
 		{
 			id: "1",
-			title: "My Account",
-			slug: "profile",
+			title: "Dashboard",
+			slug: "dashboard",
 			permission: "general",
-			icon: <HiUser />,
+			icon: <AiOutlineDashboard />,
 		},
 		{
 			id: "8",
@@ -68,6 +78,13 @@ const AccountSidebar = () => {
 			icon: <TbClipboardList />,
 		},
 		{
+			id: "6",
+			title: "Users",
+			slug: "users",
+			permission: "admin",
+			icon: <BsFillPeopleFill />,
+		},
+		{
 			id: "5",
 			title: "Settings",
 			slug: "settings",
@@ -75,18 +92,11 @@ const AccountSidebar = () => {
 			icon: <BsGearFill />,
 		},
 		{
-			id: "6",
-			title: "Users",
-			slug: "users",
-			permission: "admin",
-			icon: <BsGearFill />,
-		},
-		{
 			id: "7",
 			title: "Logout",
 			slug: "logout",
 			permission: "general",
-			icon: <BsGearFill />,
+			icon: <ImExit />,
 		},
 	];
 

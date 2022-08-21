@@ -56,7 +56,7 @@ const rows = [
 	createData("USR006", "Abu Taher Muhammad", "7045732754-37"),
 ];
 
-export default function AccountWishlist() {
+export default function AccountSettings() {
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(5);
 	const [permission, setPermission] = useState("general");

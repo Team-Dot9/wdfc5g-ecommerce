@@ -1,7 +1,8 @@
 const initialState = {
-	products: localStorage.getItem("cart")
-		? JSON.parse(localStorage.getItem("cart"))
-		: [],
+	// products: localStorage.getItem("cart")
+	// 	? JSON.parse(localStorage.getItem("cart"))
+	// 	: [],
+	products: [],
 	loading: false,
 	error: null,
 };
