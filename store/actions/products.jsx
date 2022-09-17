@@ -1,4 +1,7 @@
 import axios from "axios";
+import { groq } from "next-sanity";
+
+const QUERY = groq`*[]{}`;
 
 export const fetchProducts = () => {
 	return async (dispatch) => {

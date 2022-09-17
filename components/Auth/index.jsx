@@ -1,5 +1,5 @@
 import { Box, Modal, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import AuthSuccess from "./AuthSuccess";
 import LogIn from "./LogIn";
 import AuthRecover from "./recover";
@@ -21,52 +21,52 @@ const AuthModel = ({ isVisible, onClick }) => {
 	// const [page, setPage] = useState("success");
 
 	return (
-		<>
-			<Modal className="e_auth" open={isVisible} onClose={onClick}>
-				<Box sx={style}>
-					<Box
-						className="auth__header"
+		<Modal className="e_auth" open={isVisible} onClose={onClick}>
+			<Box sx={style}>
+				<Box
+					className="auth__header"
+					sx={{
+						p: "3rem 3.75rem 0px",
+					}}>
+					<Typography
+						variant="h6"
+						component="h3"
 						sx={{
-							p: "3rem 3.75rem 0px",
+							textAlign: "center",
+							marginBottom: "8px",
+							fontSize: "20px",
+							lineHeight: "30px",
+							color: "#2b3445",
 						}}>
-						<Typography
-							variant="h6"
-							component="h3"
-							sx={{
-								textAlign: "center",
-								marginBottom: "8px",
-								fontSize: "20px",
-								lineHeight: "30px",
-								color: "#2b3445",
-							}}>
-							Welcome to 5G Shop BD
-						</Typography>
-						<Typography
-							component="h5"
-							sx={{
-								textAlign: "center",
-								marginBottom: "36px",
-								fontSize: "12px",
-								lineHeight: "18px",
-								color: "#373f50",
-							}}>
-							{page === "login" && "Log in with email & password"}
-							{page === "register" && "Register for a new account"}
-							{page === "recovery" && "Recover your account with email"}
-						</Typography>
-					</Box>
-
-					<Box
-						className="auth__body"
+						Welcome to 5G Shop BD
+					</Typography>
+					<Typography
+						component="h5"
 						sx={{
-							p: "0 3.75rem 0px",
+							textAlign: "center",
+							marginBottom: "36px",
+							fontSize: "12px",
+							lineHeight: "18px",
+							color: "#373f50",
 						}}>
-						{page === "login" && <LogIn setPage={setPage} />}
-						{page === "register" && <Register setPage={setPage} />}
-						{page === "recovery" && <AuthRecover setPage={setPage} />}
-						{page === "success" && <AuthSuccess />}
-					</Box>
+						{page === "login" && "Log in with email & password"}
+						{page === "register" && "Register for a new account"}
+						{page === "recovery" && "Recover your account with email"}
+					</Typography>
+				</Box>
 
+				<Box
+					className="auth__body"
+					sx={{
+						p: "0 3.75rem 0px",
+					}}>
+					{page === "login" && <LogIn setPage={setPage} />}
+					{page === "register" && <Register setPage={setPage} />}
+					{page === "recovery" && <AuthRecover setPage={setPage} />}
+					{page === "success" && <AuthSuccess />}
+				</Box>
+
+				{page !== "success" && (
 					<Box
 						className="auth__footer"
 						sx={{
@@ -105,10 +105,10 @@ const AuthModel = ({ isVisible, onClick }) => {
 							</span>
 						</Typography>
 					</Box>
-				</Box>
-			</Modal>
-		</>
+				)}
+			</Box>
+		</Modal>
 	);
 };
 
-export default AuthModel;
+export default memo(AuthModel);

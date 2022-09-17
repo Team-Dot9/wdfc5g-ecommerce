@@ -20,7 +20,7 @@ const SidebarItem = ({ className, item }) => {
 
 	const updateRouteHandler = (slug) => {
 		const url = `/account#${slug}`;
-		return router.push(url);
+		if (url) return router.push(url);
 	};
 
 	return (

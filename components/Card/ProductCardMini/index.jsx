@@ -1,6 +1,7 @@
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { memo } from "react";
 
 const ProductCardMini = ({
 	id,
@@ -12,39 +13,37 @@ const ProductCardMini = ({
 	...rest
 }) => {
 	return (
-		<>
-			<div
-				className={`e_c_pcm card-${id} ${className}`}
-				id={`pcm${id}`}
-				{...rest}>
-				<div className="pcm__thumbnail">
-					<Image
-						className="pcm__img"
-						width={198}
-						height={198}
-						src={thumbnail}
-						alt={title}
-					/>
-				</div>
+		<Box
+			className={`e_c_pcm card-${id} ${className}`}
+			id={`pcm${id}`}
+			sx={{ padding: "10px" }}
+			{...rest}>
+			<Box className="pcm__thumbnail">
+				<Image
+					className="pcm__img"
+					width={198}
+					height={198}
+					src={thumbnail}
+					alt={title}
+				/>
+			</Box>
 
-				<h3 className="pcm__title">
-					<Link href={`/shop/${slug}`}>
-						<a>{title}</a>
-					</Link>
-				</h3>
+			<Typography className="pcm__title">
+				<Link href={`/shop/${slug}`}>
+					<a>{title}</a>
+				</Link>
+			</Typography>
 
-				<div className="pcm__price">
-					{price?.special && (
-						<p className="price__special">${price?.special}</p>
-					)}
+			<Box className="pcm__price">
+				{price?.special && <p className="price__special">${price?.special}</p>}
 
-					<p className={`price__regular ${price.special ? "price--del" : ""}`}>
-						${price?.regular}
-					</p>
-				</div>
-			</div>
-		</>
+				<Typography
+					className={`price__regular ${price.special ? "price--del" : ""}`}>
+					${price?.regular}
+				</Typography>
+			</Box>
+		</Box>
 	);
 };
 
-export default ProductCardMini;
+export default memo(ProductCardMini);

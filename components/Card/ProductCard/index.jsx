@@ -56,7 +56,16 @@ const ProductCard = ({
 							</p>
 						</div>
 
-						<button onClick={() => addToCart(productItems)}>
+						<button
+							onClick={() =>
+								addToCart({
+									_id: id,
+									title,
+									price,
+									thumbnail,
+									slug,
+								})
+							}>
 							<IconContext.Provider
 								value={{
 									color: "#0f3460",

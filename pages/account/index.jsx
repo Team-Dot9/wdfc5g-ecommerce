@@ -32,11 +32,11 @@ const Account = () => {
 		<Layout className="e_page page__account">
 			<Container>
 				<Grid container spacing={2}>
-					<Grid item xs={3}>
+					<Grid item xs={12} md={3} xl={2}>
 						<AccountSidebar />
 					</Grid>
 
-					<Grid item xs={9}>
+					<Grid item xs={12} md={9} xl={10}>
 						{page === "dashboard" && (
 							<AccountBody title="Dashboard" icon={<AiOutlineDashboard />}>
 								<AccountDashboard />

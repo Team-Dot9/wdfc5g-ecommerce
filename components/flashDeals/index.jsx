@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo } from "react";
 import { IconContext } from "react-icons";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import Slider from "react-slick";
@@ -38,10 +38,6 @@ const SamplePrevArrow = (props) => {
 };
 
 const FlashDeals = ({ addToCart }) => {
-	const [count, setCount] = useState(0);
-	const increment = () => {
-		setCount(count + 1);
-	};
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -50,6 +46,36 @@ const FlashDeals = ({ addToCart }) => {
 		slidesToScroll: 1,
 		nextArrow: <SampleNextArrow />,
 		prevArrow: <SamplePrevArrow />,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 4,
+				},
+			},
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
 	};
 
 	return (
@@ -87,4 +113,4 @@ const FlashDeals = ({ addToCart }) => {
 	);
 };
 
-export default FlashDeals;
+export default memo(FlashDeals);

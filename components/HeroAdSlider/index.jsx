@@ -1,4 +1,5 @@
-import React from "react";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import React, { memo } from "react";
 import Slider from "react-slick";
 
 const S_DATA = [
@@ -42,32 +43,30 @@ const HeroAdSlider = () => {
 
 	return (
 		<>
-			<section className="e_heroSlider">
-				{/* <Container> */}
-				<div className="container">
+			<Box component="section" className="e_heroSlider">
+				<Container className="hs__container">
 					<Slider {...settings}>
 						{S_DATA.map((value, index) => (
-							<>
-								<div className="hs__slide box d_flex top" key={index}>
-									<div className="hs__left">
-										<h1 className="hs__title">{value.title}</h1>
-										<p className="hs_desc">{value.desc}</p>
+							<Box key={index}>
+								<Grid container spacing={2} className="hs__slide">
+									<Grid item className="hs__left" md={8} sm={8} xs={8}>
+										<Typography className="hs__title">{value.title}</Typography>
+										<Typography className="hs_desc">{value.desc}</Typography>
 										<button className="btn-primary hs__button">
 											Visit Collections
 										</button>
-									</div>
-									<div className="hs__right">
+									</Grid>
+									<Grid item className="hs__right" md={4} sm={4} xs={4}>
 										<img className="hs__img" src={value.cover} alt="" />
-									</div>
-								</div>
-							</>
+									</Grid>
+								</Grid>
+							</Box>
 						))}
 					</Slider>
-				</div>
-				{/* </Container> */}
-			</section>
+				</Container>
+			</Box>
 		</>
 	);
 };
 
-export default HeroAdSlider;
+export default memo(HeroAdSlider);

@@ -4,10 +4,12 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { IconContext } from "react-icons";
 import { HiOutlineShoppingBag, HiUser } from "react-icons/hi";
+import { useSelector } from "react-redux";
 import SEARCH from "../../../assets/images/icon/search.svg";
 import LOGO from "../../../assets/images/logo.png";
 
 const SearchBar = ({ cartItem, onAvatarClick }) => {
+	const cart = useSelector((state) => state.cartProducts);
 	useEffect(() => {
 		// fixed Header
 		window.addEventListener("scroll", function () {
@@ -69,7 +71,7 @@ const SearchBar = ({ cartItem, onAvatarClick }) => {
 											height: "44px",
 											width: "44px",
 										}}>
-										<Badge badgeContent={4} color="error">
+										<Badge badgeContent={cart.products.length} color="error">
 											<HiOutlineShoppingBag />
 										</Badge>
 									</IconButton>

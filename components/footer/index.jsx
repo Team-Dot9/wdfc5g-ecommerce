@@ -1,9 +1,15 @@
+import { Box, Container, Grid } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 const Footer = () => {
 	return (
 		<>
-			<footer>
-				<div className="container grid2">
+			<Box component="footer">
+				<Container maxWidth="lg" className="grid2">
+					<Grid container spacing={3}>
+						<Grid item></Grid>
+					</Grid>
+					
 					<div className="box">
 						<h1>5G Shop</h1>
 						<p>
@@ -24,23 +30,37 @@ const Footer = () => {
 					</div>
 
 					<div className="box">
-						<h2>About Us</h2>
+						<h2>Info</h2>
 						<ul>
-							<li>Careers</li>
-							<li>Our Stores</li>
-							<li>Our Cares</li>
-							<li>Terms & Conditions</li>
-							<li>Privacy Policy</li>
+							<Link href="/return-policy" passHref>
+								<li>Return Policy</li>
+							</Link>
+							<Link href="/support-policy" passHref>
+								<li>Support & Policy</li>
+							</Link>
+							<Link href="/terms-condition" passHref>
+								<li>Terms & Condition</li>
+							</Link>
+							<Link href="/privacy-policy" passHref>
+								<li>Privacy Policy</li>
+							</Link>
+							<Link href="/about" passHref>
+								<li>About Us</li>
+							</Link>
 						</ul>
 					</div>
 					<div className="box">
-						<h2>Customer Care</h2>
+						<h2>Menu</h2>
 						<ul>
-							<li>Help Center </li>
-							<li>How to Buy </li>
-							<li>Track Your Order </li>
-							<li>Corporate & Bulk Purchasing </li>
-							<li>Returns & Refunds </li>
+							<Link href="/account" passHref>
+								<li>Account</li>
+							</Link>
+							<Link href="/cart" passHref>
+								<li>Cart</li>
+							</Link>
+							<Link href="/order-track" passHref>
+								<li>Order Track</li>
+							</Link>
 						</ul>
 					</div>
 					<div className="box">
@@ -53,8 +73,8 @@ const Footer = () => {
 							<li>Phone: +1 1123 456 780</li>
 						</ul>
 					</div>
-				</div>
-			</footer>
+				</Container>
+			</Box>
 		</>
 	);
 };

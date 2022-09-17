@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React from "react";
+import React, { memo } from "react";
 
 const submitButtonStyle = {
 	display: "flex",
@@ -30,15 +30,30 @@ const LogIn = ({ setPage }) => {
 		<>
 			<div className="e_logIn">
 				<Formik
-					initialValues={{ email: "", password: "" }}
+					initialValues={{ phone: "", password: "" }}
 					validate={(values) => {
 						const errors = {};
-						if (!values.email) {
-							errors.email = "Required";
+
+						// Phone number
+						if (!values.phone) {
+							errors.phone = "Required";
 						} else if (
-							!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+							!/(^([+]{1}[8]{2}|0088)?(01){1}[3-9]{1}\d{8})$/i.test(
+								values.phone
+							)
 						) {
-							errors.email = "Invalid email address";
+							errors.phone = "Invalid phone number";
+						}
+
+						if (!values.password) {
+							errors.password = "Required";
+						} else if (
+							!/^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/.test(
+								values.password
+							)
+						) {
+							errors.password =
+								"8-32 characters, at least one uppercase letter, one lowercase letter, one number and one special character!";
 						}
 						return errors;
 					}}
@@ -53,11 +68,11 @@ const LogIn = ({ setPage }) => {
 							className="form__form"
 							style={{ position: "relative", display: "block" }}>
 							<Box className="form__input__wrapper">
-								<label htmlFor="email">Email or Phone Number</label>
-								<Field type="email" name="email" />
+								<label htmlFor="phone">Phone Number</label>
+								<Field type="phone" name="phone" />
 								<ErrorMessage
 									className="form__error"
-									name="email"
+									name="phone"
 									component="small"
 								/>
 							</Box>
@@ -115,4 +130,4 @@ const LogIn = ({ setPage }) => {
 	);
 };
 
-export default LogIn;
+export default memo(LogIn);

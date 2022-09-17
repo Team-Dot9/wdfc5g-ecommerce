@@ -2,7 +2,7 @@
 
 footer {
 	background-color: #0f3460;
-	padding: 100px 0;
+	padding: 40px 0;
 	color: #fff;
 }
 footer h1 {
@@ -33,6 +33,7 @@ footer h2 {
 	margin-bottom: 20px;
 }
 footer li {
+	cursor: pointer;
 	margin-bottom: 10px;
 	opacity: 0.5;
 }

@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { memo } from "react";
 
 const AuthSuccess = () => {
 	return (
@@ -17,4 +17,4 @@ const AuthSuccess = () => {
 	);
 };
 
-export default AuthSuccess;
+export default memo(AuthSuccess);

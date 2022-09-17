@@ -11,14 +11,24 @@ import { productFaqReducer } from "./productFaqReducer";
 import { productReducer } from "./productReducer";
 import { productsCategoryReducer } from "./productsCategoryReducer";
 import { productsReducer } from "./productsReducer";
+import { productsReducerArrivals } from "./productsReducerArrivals";
+import { productsReducerDiscount } from "./productsReducerDiscount";
+import { productsReducerFlashDeals } from "./productsReducerFlashDeals";
+import { productsReducerLanding } from "./productsReducerLanding";
 import { searchResultsReducer } from "./searchResultsReducer";
 import { shippingReducer } from "./shippingReducer";
 
 export const rootReducer = combineReducers({
-	products: productsReducer,
+	// Landing page
+	productsFlashDeals: productsReducerFlashDeals, // Flash deal products.
+	productsDiscount: productsReducerDiscount, // Discount products.
+	productsArrivals: productsReducerArrivals, // New arrival products.
+	products: productsReducer, // All products. Products for shop page.
+
 	productsCategory: productsCategoryReducer,
 	product: productReducer,
 	productFaq: productFaqReducer,
+	productLanding: productsReducerLanding,
 	categories: categoriesReducer,
 	category: categoryReducer,
 	basket: basketReducer,

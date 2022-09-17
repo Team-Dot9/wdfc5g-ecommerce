@@ -4,16 +4,66 @@
 	background: #f6f9fc;
 	height: auto;
 	padding: 50px 0;
+	@at-root .e_cart__list {
+		.e_card__empty {
+			.e_card__empty__content {
+				padding: 40px;
+			}
+			.e_card__empty__title {
+				text-align: center;
+				color: #7d879c;
+			}
+			.e_card__empty__link {
+				cursor: pointer;
+				margin-top: 15px;
+				text-align: center;
+				color: $color-primary;
+			}
+		}
 
-	@at-root .cart__items {
-		width: 70%;
+		@at-root .cart__items {
+		}
 	}
+	@at-root .e_cart__sidebar {
+		@at-root .e_c__cart__wgt {
+			.e_cart__wgt__item {
+				font-size: 14px;
+			}
+			.e_wgt__item__key {
+			}
+			.e_wgt__item__value {
+			}
+			.e_wgt__body {
+				padding: 20px;
+			}
+			.e_wgt__title {
+				margin-bottom: 10px;
+				padding-bottom: 8px;
+				font-size: 16px;
+				font-weight: bold;
+				border-bottom: 1px solid rgb(3 0 71 / 9%);
+			}
+			.e_wgt__footer {
+				margin-top: 20px;
+				padding-top: 8px;
+				border-top: 1px solid rgb(3 0 71 / 9%);
+			}
 
-	@at-root .cart__total {
-		width: 30%;
-		margin-top: 30px;
-		margin-left: 30px;
-		height: 130px;
+			.e_cart--total {
+				font-size: 18px;
+				color: $color-primary;
+			}
+		}
+
+		.e_cart__checkout {
+			.e_cart__checkout__button {
+				margin-top: 20px;
+				padding: 8px 12px;
+				font-weight: 500;
+				color: #fff;
+				background-color: $color-primary;
+			}
+		}
 	}
 
 	@at-root .cart__item {
@@ -76,7 +126,7 @@
 		color: grey;
 	}
 	.e_cart h4 span {
-		color: #e94560;
+		color: $color-primary;
 		margin-left: 20px;
 		font-weight: 500;
 	}
@@ -108,29 +158,14 @@
 	.incCart {
 		background: none;
 		border: 1px solid rgb(3 0 71 / 9%);
-		color: #e94560;
+		color: $color-primary;
 	}
 	.desCart {
 		background: #f6f9fc;
 	}
-	.cart__total h4 {
-		font-size: 15px;
-		font-weight: 400;
-	}
-	.cart__total h3 {
-		font-size: 20px;
-		font-weight: 500;
-		color: #e94560;
-	}
-	.cart__total h2 {
-		font-size: 18px;
-		margin-bottom: 20px;
-		border-bottom: 1px solid rgb(3 0 71 / 9%);
-		padding-bottom: 10px;
-		color: #e94560;
-	}
+
 	.no-items {
-		color: #e94560;
+		color: $color-primary;
 		font-size: 18px;
 		margin-top: 30px;
 		height: 130px;

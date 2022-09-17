@@ -1,0 +1,57 @@
+@use "../../../styles/var";
+
+.e_user__info__drawer {
+	@at-root .e_user__info {
+		background: $bg-light;
+		@at-root .e_user__info__container {
+			padding-top: 10px;
+			padding-bottom: 30px;
+			@at-root .e_user__info__toolbar {
+			}
+			@at-root .e_user__info__title {
+				font-size: 28px;
+				line-height: 32px;
+				color: $color-dark;
+			}
+			@at-root .e_user__info_personal {
+			}
+			@at-root .e_user__info_activity {
+			}
+		}
+	}
+}
+
+@media (max-width: 889px) {
+	.e_user__info__drawer {
+		@at-root .e_user__info {
+			width: 100vw;
+			@at-root .e_user__info__container {
+				@at-root .e_user__info__toolbar {
+				}
+				@at-root .e_user__info__title {
+				}
+				@at-root .e_user__info_personal {
+				}
+				@at-root .e_user__info_activity {
+				}
+			}
+		}
+	}
+}
+@media (min-width: 890px) {
+	.e_user__info__drawer {
+		@at-root .e_user__info {
+			width: 80vw;
+			@at-root .e_user__info__container {
+				@at-root .e_user__info__toolbar {
+				}
+				@at-root .e_user__info__title {
+				}
+				@at-root .e_user__info_personal {
+				}
+				@at-root .e_user__info_activity {
+				}
+			}
+		}
+	}
+}

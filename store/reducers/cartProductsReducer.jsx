@@ -1,6 +1,6 @@
 const initialState = {
-	// products: localStorage.getItem("cart")
-	// 	? JSON.parse(localStorage.getItem("cart"))
+	// products: localStorage?.getItem("cart")
+	// 	? JSON.parse(localStorage?.getItem("cart"))
 	// 	: [],
 	products: [],
 	loading: false,
@@ -9,21 +9,38 @@ const initialState = {
 
 export const cartProductsReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case "ADD_PRODUCT_TO_CART":
-			const products = [...state.products, action.payload];
+		case "ADD_PRODUCT_TO_CART": {
+			let products;
 
-			localStorage.setItem(
-				"cart",
-				JSON.stringify([...state.products, action.payload])
+			// Checking product existence in the cart. If exist? Storing it to the variable.
+			const productExist = state.products.find(
+				(item) => item._id === action.payload._id
 			);
+
+			// If product exist in the cart? Just increasing the quantity.
+			// Otherwise adding it to cart as new item and giving it a quantity value of 1.
+			if (productExist) {
+				products = state.products.map((item) =>
+					item._id === action.payload._id
+						? { ...productExist, qty: productExist.qty + 1 }
+						: item
+				);
+			} else {
+				// Updating the localStorage.
+				products = [...state.products, { ...action.payload, qty: 1 }];
+			}
+
+			// Updating localStorage with updated contents.
+			localStorage.setItem("cart", JSON.stringify(products));
 
 			return {
 				...state,
 				products,
 			};
+		}
 		case "REMOVE_PRODUCT_FROM_CART":
 			const newProducts = state.products.filter(
-				(item) => item.id !== action.payload
+				(item) => item._id !== action.payload._id
 			);
 
 			localStorage.setItem("cart", JSON.stringify(newProducts));
@@ -33,24 +50,38 @@ export const cartProductsReducer = (state = initialState, action) => {
 				products: newProducts,
 			};
 		case "DECREMENT_PRODUCT_FROM_CART": {
-			const newProducts = [...state.products].reverse();
-			newProducts.splice(
-				[...newProducts].findIndex(
-					(item) =>
-						item.id === action.payload.id &&
-						(item.product_variation[0] && action.payload.product_variation[0]
-							? item.product_variation[0].id ===
-							  action.payload.product_variation[0].id
-							: true)
-				),
-				1
+			let products;
+
+			// Checking product existence in the cart. If exist? Storing it to the variable.
+			const productExist = state.products.find(
+				(item) => item._id === action.payload._id
 			);
-			newProducts.reverse();
-			localStorage.setItem("cart", JSON.stringify(newProducts));
+
+			// If product exist in the cart? Just increasing the quantity.
+			// Otherwise adding it to cart as new item and giving it a quantity value of 1.
+			if (productExist) {
+				if (productExist.qty > 1) {
+					products = state.products.map((item) =>
+						item._id === action.payload._id
+							? { ...productExist, qty: productExist.qty - 1 }
+							: item
+					);
+				} else {
+					products = state.products.splice(
+						[...state.products].findIndex(
+							(item) => item._id === action.payload._id
+						),
+						1
+					);
+				}
+			}
+
+			// Updating localStorage with updated contents.
+			localStorage.setItem("cart", JSON.stringify(products));
 
 			return {
 				...state,
-				products: newProducts,
+				products,
 			};
 		}
 		case "CLEAR_CART":

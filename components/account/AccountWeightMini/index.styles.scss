@@ -1,0 +1,18 @@
+@use "../../../styles/var";
+
+.e_c__dash__wgtm {
+	border-radius: 8px;
+	box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	background-color: rgb(255, 255, 255);
+	@at-root .e_c__dash__wgtm__header {
+		padding-bottom: 0;
+		.e_wgtm__header__title {
+			font-size: 18px !important;
+			font-weight: 500;
+			color: $color-dark;
+		}
+	}
+	@at-root .e_c__dash__wgtm__body {
+		padding-top: 10px;
+	}
+}

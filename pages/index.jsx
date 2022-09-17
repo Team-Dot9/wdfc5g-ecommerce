@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Announcement from "../components/Announcement";
 import Discount from "../components/Discount";
 import FlashDeals from "../components/FlashDeals";
@@ -9,31 +9,16 @@ import NewArrivals from "../components/NewArrivals";
 import ShopScene from "../components/ShopScene";
 import TopCategory from "../components/TopCategory";
 import Wrapper from "../components/Wrapper";
+import { addProductToCartAction } from "../store/actions/cartProducts";
 import { shopItems } from "../store/Data";
 
 const Home = () => {
-	const [cartItem, setCartItem] = useState([]);
+	const { products: cartItem } = useSelector((state) => state.cartProducts);
+	const dispatch = useDispatch();
+	console.log("Cart Products: ", cartItem);
 
 	const addToCart = (product) => {
-		// Checking product existence in the cart.
-		const productExit = CartItem.find((item) => item.id === product.id);
-
-		// If product already exist in cart then we will increase the product quantity in the cart.
-		// ani increase  exits product QTY by 1
-		// if item and product doesn't match then will add new items
-		if (productExit) {
-			setCartItem(
-				CartItem.map((item) =>
-					item.id === product.id
-						? { ...productExit, qty: productExit.qty + 1 }
-						: item
-				)
-			);
-		} else {
-			// but if the product doesnt exit in the cart that mean if card is empty
-			// then new product is added in cart  and its qty is initalize to 1
-			setCartItem([...CartItem, { ...product, qty: 1 }]);
-		}
+		dispatch(addProductToCartAction(product));
 	};
 
 	const decreaseQty = (product) => {
