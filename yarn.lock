@@ -993,6 +993,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tawk.to/tawk-messenger-react@^2.0.2.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@tawk.to/tawk-messenger-react/-/tawk-messenger-react-2.0.1.tgz#2e9bbfef47f81578aa49a7cd4d72191a0c3276a4"
+  integrity sha512-jMWbeOCMwqcjLCR7a9+mh0Ce/Cl9aPyfZAvzkNKCFKBYaV9n8eAE7U/XKKFqCKfp5AehDMUCB5saG2cFSSP0Xw==
+
 "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"

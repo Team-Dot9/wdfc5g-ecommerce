@@ -1,11 +1,11 @@
-@import "../../../styles/var";
+@use "../../../styles/var";
 
 .e_c_pcm {
 	min-width: 198px;
 	padding: 12px;
 	position: relative;
 	border-radius: 8px;
-	box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	box-shadow: $shadow;
 	background: #fff;
 	&:hover {
 	}

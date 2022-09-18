@@ -1,3 +1,4 @@
+import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 import { IconContext } from "react-icons";
 import { FaHeadset, FaIdCard, FaShieldAlt, FaTruck } from "react-icons/fa";
@@ -27,25 +28,29 @@ const Wrapper = () => {
 	];
 	return (
 		<>
-			<section className="wrapper background">
-				<div className="container grid2">
-					{data.map((val, index) => (
-						<div className="product" key={index}>
-							<div className="img icon-circle">
-								<IconContext.Provider
-									value={{
-										color: "rgb(43, 52, 69)",
-										style: { fontSize: "28px" },
-									}}>
-									<i>{val.cover}</i>
-								</IconContext.Provider>
-							</div>
-							<h3>{val.title}</h3>
-							<p>{val.decs}</p>
-						</div>
-					))}
-				</div>
-			</section>
+			<Box component="section" className="wrapper background">
+				<Container className="">
+					<Grid container>
+						{data.map((val, index) => (
+							<Grid key={index} item lg={3} md={3} sm={6} sx={12}>
+								<Box className="product">
+									<Box className="img icon-circle">
+										<IconContext.Provider
+											value={{
+												color: "rgb(43, 52, 69)",
+												style: { fontSize: "28px" },
+											}}>
+											<i>{val.cover}</i>
+										</IconContext.Provider>
+									</Box>
+									<h3>{val.title}</h3>
+									<p>{val.decs}</p>
+								</Box>
+							</Grid>
+						))}
+					</Grid>
+				</Container>
+			</Box>
 		</>
 	);
 };

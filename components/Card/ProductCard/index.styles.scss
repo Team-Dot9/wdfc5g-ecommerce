@@ -5,9 +5,10 @@
 	padding: 20px;
 	position: relative;
 	border-radius: 8px;
-	box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+	box-shadow: $shadow;
 	margin: 10px;
 	&:hover {
+		box-shadow: $shadow1;
 		.productCard__like {
 			opacity: 1;
 		}

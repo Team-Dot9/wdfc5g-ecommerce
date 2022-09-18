@@ -1,10 +1,11 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { memo } from "react";
 import { IconContext } from "react-icons";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 import Slider from "react-slick";
 import { productItems } from "../../store/Data.js";
 import ProductCard from "../Card/ProductCard/index.jsx";
+import WidgetSection from "../WidgetSection/index.jsx";
 
 const SampleNextArrow = (props) => {
 	const { onClick } = props;
@@ -81,35 +82,28 @@ const FlashDeals = ({ addToCart }) => {
 
 	return (
 		<>
-			<Box component="section" className="e_flashDeal">
-				<Container maxWidth="lg">
-					{/* Header Start */}
-					<Box className="heading f_flex">
-						<i className="fa fa-bolt"></i>
-						<h1>Flash Delas</h1>
-					</Box>
-					{/* Header End */}
-
-					{/* Body Start */}
-					<Slider {...settings}>
-						{productItems.map((productItem, i) => (
-							<ProductCard
-								key={productItem.id}
-								id={productItem.id}
-								className="box"
-								title={productItem.name}
-								discount={productItem.discount}
-								thumbnail={productItem.cover}
-								price={productItem.price}
-								slug={productItem.name.split(" ").join("-").toLocaleLowerCase()}
-								addToCart={addToCart}
-								addToWishList={console.log}
-							/>
-						))}
-					</Slider>
-					{/* Body End */}
-				</Container>
-			</Box>
+			<WidgetSection
+				className="e_flashDeal"
+				title="Flash Deals"
+				// icon="https://img.icons8.com/glyph-neue/64/26e07f/new.png"
+				url="/shop?tag=flash-deals">
+				<Slider {...settings}>
+					{productItems.map((productItem, i) => (
+						<ProductCard
+							key={productItem.id}
+							id={productItem.id}
+							className="box"
+							title={productItem.name}
+							discount={productItem.discount}
+							thumbnail={productItem.cover}
+							price={productItem.price}
+							slug={productItem.name.split(" ").join("-").toLocaleLowerCase()}
+							addToCart={addToCart}
+							addToWishList={console.log}
+						/>
+					))}
+				</Slider>
+			</WidgetSection>
 		</>
 	);
 };
