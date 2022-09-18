@@ -55,8 +55,8 @@ const ReturnPolicy = () => {
 							<br />
 							You can make your purchases on Kafela.com.bd and get delivery from
 							anywhere in the Jhenaidah City. Delivery charge varies according
-							to customers' place. In case of paid order, Kafela cannot be held
-							liable if customer does not receive it within 4 weeks.
+							to customer&apos;s place. In case of paid order, Kafela cannot be
+							held liable if customer does not receive it within 4 weeks.
 						</Typography>
 
 						<Typography
@@ -89,13 +89,13 @@ const ReturnPolicy = () => {
 							charge for it. Other wise, you need to send it by courier/yourself
 							to our office address (Baparipara, Infront of Govt. K.C College,
 							745 Beparypara Rd). Damages due to neglect, improper usage or
-							application will not be covered under our 'Replacement’.
+							application will not be covered under our &apos;Replacement&apos;.
 						</Typography>
 
 						<Typography className="e_doc_content__body" variant="body1">
-							In case of product's sold out at merchant's end, customer can
-							choose any other product from our website or can keep the amount
-							refund to his/her wallet account.
+							In case of product&apos;s sold out at merchant&apos;s end,
+							customer can choose any other product from our website or can keep
+							the amount refund to his/her wallet account.
 						</Typography>
 
 						<Typography className="e_doc_content__body" variant="body1">

@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
 						</Typography>
 						<Typography className="e_doc_content__body" variant="body1">
 							A cookie is a small file which asks permission to be placed on
-							your computer's hard drive. Cookies allow web applications to
+							your computer&apos;s hard drive. Cookies allow web applications to
 							respond to you as an individual. The web application can tailor
 							its operations to your needs, likes and dislikes by gathering and
 							remembering information about your preferences. We only use this

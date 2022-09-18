@@ -37,7 +37,7 @@ const About = () => {
 							save your valuable time and money. You can pay using all types of
 							payment gateways. If you want to return a product or service for
 							any reason after receiving it, you will get an easy return system.
-							So let's go to the Kafela.com.bd .
+							So let&apos;s go to the Kafela.com.bd .
 						</Typography>
 						<Typography className="e_doc_content__body" variant="body1">
 							Kafela.com.bd is a one of the largest online shop for Grocery,

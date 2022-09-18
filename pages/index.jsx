@@ -48,7 +48,6 @@ const PRODUCT_MENU = [
 const Home = () => {
 	const { products: cartItem } = useSelector((state) => state.cartProducts);
 	const dispatch = useDispatch();
-	console.log("Cart Products: ", cartItem);
 
 	const addToCart = (product) => {
 		dispatch(addProductToCartAction(product));

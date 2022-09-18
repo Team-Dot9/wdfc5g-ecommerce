@@ -13,18 +13,19 @@ const TermsCondition = () => {
 						</Typography>
 
 						<Typography className="e_doc_content__body" variant="body1">
-							Welcome to kafela.com.bd also hereby known as “we", "us" or
-							"Kafela". We are an online marketplace and these are the terms and
-							conditions governing your access and use of kafela along with its
-							related sub-domains, sites, services and tools (the "Site"). By
-							using the Site, you hereby accept these terms and conditions
-							(including the linked information herein) and represent that you
-							agree to comply with these terms and conditions (the "User
-							Agreement"). This User Agreement is deemed effective upon your use
-							of the Site which signifies your acceptance of these terms. If you
-							do not agree to be bound by this User Agreement please do not
-							access, register with or use this Site. This Site is owned and
-							operated by www.kafela.com.bd.
+							Welcome to kafela.com.bd also hereby known as &quot;we&quot;,
+							&quot;us&quot; or &quot;Kafela&quot;. We are an online marketplace
+							and these are the terms and conditions governing your access and
+							use of kafela along with its related sub-domains, sites, services
+							and tools (the &quot;Site&quot;). By using the Site, you hereby
+							accept these terms and conditions (including the linked
+							information herein) and represent that you agree to comply with
+							these terms and conditions (the &quot;User Agreement&quot;). This
+							User Agreement is deemed effective upon your use of the Site which
+							signifies your acceptance of these terms. If you do not agree to
+							be bound by this User Agreement please do not access, register
+							with or use this Site. This Site is owned and operated by
+							www.kafela.com.bd.
 						</Typography>
 						<Typography className="e_doc_content__body" variant="body1">
 							When you use moom.com.bd, we collect and store your personal
