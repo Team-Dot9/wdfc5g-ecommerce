@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import TopBar from "./TopBar";
 
-const Header = ({ cartItem }) => {
+const Header = ({}) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const modelOnClose = () => setIsVisible(false);
@@ -13,7 +13,7 @@ const Header = ({ cartItem }) => {
 	return (
 		<>
 			<TopBar />
-			<SearchBar onAvatarClick={modelOnOpen} cartItem={cartItem} />
+			<SearchBar onAvatarClick={modelOnOpen} />
 			<Navbar />
 
 			<AuthModel isVisible={isVisible} onClick={modelOnClose} />

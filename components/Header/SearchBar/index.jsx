@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 import SEARCH from "../../../assets/images/icon/search.svg";
 import LOGO from "../../../assets/images/logo.png";
 
-const SearchBar = ({ cartItem, onAvatarClick }) => {
+const SearchBar = ({ onAvatarClick }) => {
 	const cart = useSelector((state) => state.cartProducts);
 	const [search, setSearch] = useState("");
 	const router = useRouter();
