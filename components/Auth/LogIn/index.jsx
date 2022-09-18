@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { memo } from "react";
+import useAuth from "../../../hook/useAuth";
 
 const submitButtonStyle = {
 	display: "flex",
@@ -26,6 +27,7 @@ const submitButtonStyle = {
 };
 
 const LogIn = ({ setPage }) => {
+	const auth = useAuth();
 	return (
 		<>
 			<div className="e_logIn">
@@ -59,7 +61,8 @@ const LogIn = ({ setPage }) => {
 					}}
 					onSubmit={(values, { setSubmitting }) => {
 						setTimeout(() => {
-							alert(JSON.stringify(values, null, 2));
+							auth.logIn(values.phone, values.password);
+							setPage("success");
 							setSubmitting(false);
 						}, 400);
 					}}>

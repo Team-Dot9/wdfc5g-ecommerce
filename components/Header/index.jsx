@@ -1,14 +1,22 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import useAuth from "../../hook/useAuth";
 import AuthModel from "../Auth";
 import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import TopBar from "./TopBar";
 
 const Header = ({}) => {
+	const auth = useAuth();
+	console.log(auth);
+	const router = useRouter();
 	const [isVisible, setIsVisible] = useState(false);
 
 	const modelOnClose = () => setIsVisible(false);
-	const modelOnOpen = () => setIsVisible(true);
+	const modelOnOpen = () =>
+		auth.loggedIn
+			? router.push(`/account#dashboard`, null, { shallow: true })
+			: setIsVisible(true);
 
 	return (
 		<>

@@ -6,14 +6,17 @@ import React, { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { AiOutlineSearch } from "react-icons/ai";
 import { HiOutlineShoppingBag, HiUser } from "react-icons/hi";
+import { IoIosLogOut } from "react-icons/io";
 import { useSelector } from "react-redux";
 import SEARCH from "../../../assets/images/icon/search.svg";
 import LOGO from "../../../assets/images/logo.png";
+import useAuth from "../../../hook/useAuth";
 
 const SearchBar = ({ onAvatarClick }) => {
 	const cart = useSelector((state) => state.cartProducts);
 	const [search, setSearch] = useState("");
 	const router = useRouter();
+	const auth = useAuth();
 	useEffect(() => {
 		// fixed Header
 		window.addEventListener("scroll", function () {
@@ -108,6 +111,21 @@ const SearchBar = ({ onAvatarClick }) => {
 								</IconButton>
 							</a>
 						</Link>
+
+						{auth.loggedIn && (
+							<IconButton
+								size="large"
+								aria-label="show cart"
+								className="sb__avatarIcon"
+								color="inherit"
+								sx={{
+									height: "44px",
+									width: "44px",
+								}}
+								onClick={() => auth.logOut()}>
+								<IoIosLogOut />
+							</IconButton>
+						)}
 					</IconContext.Provider>
 				</Box>
 			</Container>

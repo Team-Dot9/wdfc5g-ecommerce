@@ -15,6 +15,7 @@ import { IconContext } from "react-icons";
 import { FaMinus, FaPlus, FaTimes } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../components/Layout";
+import useAuth from "../../hook/useAuth";
 import {
 	addProductToCartAction,
 	decrementProductFromCartAction,
@@ -24,32 +25,9 @@ import {
 const Cart = () => {
 	const dispatch = useDispatch();
 	const { products } = useSelector((state) => state.cartProducts);
+	const auth = useAuth();
+	console.log("AUTH: ", auth);
 
-	const decreaseQty = (product) => {
-		// if hamro product alredy cart xa bhane  find garna help garxa
-		const productExit = cartItem.find((item) => item.id === product.id);
-
-		// if product is exit and its qty is 1 then we will run a fun  setCartItem
-		// inside  setCartItem we will run filter to check if item.id is match to product.id
-		// if the item.id is doesnt match to product.id then that items are display in cart
-		// else
-		if (productExit.qty === 1) {
-			setCartItem(cartItem.filter((item) => item.id !== product.id));
-		} else {
-			// if product is exit and qty  of that produt is not equal to 1
-			// then will run function call setCartItem
-			// inside setCartItem we will run map method
-			// this map() will check if item.id match to produt.id  then we have to desc the qty of product by 1
-			setCartItem(
-				cartItem.map((item) =>
-					item.id === product.id
-						? { ...productExit, qty: productExit.qty - 1 }
-						: item
-				)
-			);
-		}
-	};
-	// Stpe: 7   calucate total of items
 	const totalPrice = products.reduce((price, item) => {
 		const pPrice = item.price.special ? item.price.special : item.price.regular;
 		price + item.qty * pPrice;

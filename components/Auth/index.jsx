@@ -1,5 +1,6 @@
 import { Box, Modal, Typography } from "@mui/material";
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
+import useAuth from "../../hook/useAuth";
 import AuthSuccess from "./AuthSuccess";
 import LogIn from "./LogIn";
 import AuthRecover from "./recover";
@@ -19,6 +20,11 @@ const style = {
 const AuthModel = ({ isVisible, onClick }) => {
 	const [page, setPage] = useState("login");
 	// const [page, setPage] = useState("success");
+	const auth = useAuth();
+
+	useEffect(() => {
+		if (auth.loggedIn) onClick();
+	}, [auth.loggedIn]);
 
 	return (
 		<Modal className="e_auth" open={isVisible} onClose={onClick}>
