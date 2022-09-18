@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -36,7 +37,7 @@ const Navbar = () => {
 	return (
 		<>
 			<nav className="e_navbar">
-				<div className="container">
+				<Container className="nb__container" maxWidth="lg">
 					<ul className="navbar__menu" onClick={() => setMobileMenu(false)}>
 						{DATA.map((item, i) => (
 							<li key={i}>
@@ -56,7 +57,7 @@ const Navbar = () => {
 							<i className="fas fa-bars open"></i>
 						)}
 					</button>
-				</div>
+				</Container>
 			</nav>
 		</>
 	);

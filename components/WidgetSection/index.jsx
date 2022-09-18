@@ -1,17 +1,18 @@
+import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { memo } from "react";
 import { IconContext } from "react-icons";
 import { AiFillCaretRight } from "react-icons/ai";
 
 const WidgetSection = ({ children, className, icon, title, url, ...rest }) => {
 	return (
-		<>
-			<section className={`e_c_ws ${className}`} {...rest}>
-				<div className="container">
-					{/* Header Started */}
-					<div className="ws__head">
-						<div className="head__left">
+		<Box component="section" className={`e_c_ws ${className}`} {...rest}>
+			<Container maxWidth="lg">
+				{/* Header Started */}
+				<Box className="ws__head">
+					<Box className="head__left">
+						{icon && (
 							<Image
 								className="head__img"
 								src={icon}
@@ -19,30 +20,31 @@ const WidgetSection = ({ children, className, icon, title, url, ...rest }) => {
 								height={30}
 								alt={title}
 							/>
-							<h2 className="head__title">{title}</h2>
-						</div>
+						)}
 
-						<div className="head__right">
-							<Link href={url}>
-								<a>
-									<span>View all</span>
+						<Typography className="head__title">{title}</Typography>
+					</Box>
 
-									<IconContext.Provider value={{ style: { fontSize: "12px" } }}>
-										<AiFillCaretRight />
-									</IconContext.Provider>
-								</a>
-							</Link>
-						</div>
-					</div>
-					{/* Header Ended */}
+					<Box className="head__right">
+						<Link href={url}>
+							<a>
+								<span>View all</span>
 
-					{/* Body Started */}
-					<div className="ws__body">{children}</div>
-					{/* Body Ended */}
-				</div>
-			</section>
-		</>
+								<IconContext.Provider value={{ style: { fontSize: "12px" } }}>
+									<AiFillCaretRight />
+								</IconContext.Provider>
+							</a>
+						</Link>
+					</Box>
+				</Box>
+				{/* Header Ended */}
+
+				{/* Body Started */}
+				<Box className="ws__body">{children}</Box>
+				{/* Body Ended */}
+			</Container>
+		</Box>
 	);
 };
 
-export default WidgetSection;
+export default memo(WidgetSection);

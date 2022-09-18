@@ -1,6 +1,4 @@
-@import "../../../styles/var";
-
-$color-primary: #26e07f;
+@use "../../../styles/var";
 
 .e_navbar {
 	// height: 8vh;
@@ -33,7 +31,7 @@ $color-primary: #26e07f;
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 509px) {
 	.e_navbar {
 		&.active {
 			height: 10vh;
@@ -88,4 +86,8 @@ $color-primary: #26e07f;
 			line-height: 60px;
 		}
 	}
+}
+@media (min-width: 600) and (max-width: 899px) {
+}
+@media (min-width: 900px) {
 }

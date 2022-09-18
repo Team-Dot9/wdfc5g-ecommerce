@@ -1,5 +1,8 @@
-.e_searchbar {
+@use "../../../styles/var";
+
+.e_searchBar {
 	padding: 10px 0;
+	transition: all 0.3s ease-in-out;
 	&.active {
 		// height: 12vh;
 		position: fixed;
@@ -8,39 +11,34 @@
 		width: 100%;
 		background-color: #fff;
 		box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
-		transition: 0.5s;
-
-		.searchbar__logo {
-			height: 38px;
+		// transition: 0.5s;
+		.sb__container {
+		}
+		.sb__logo {
 			width: auto;
 		}
-		.searchbar__searchBox {
-			height: 38px;
+		.sb__searchBox {
 			input,
-			.searchbar__searchBox__categories {
-				height: 38px;
+			.sb__searchBox__categories {
 			}
 		}
 	}
 
-	.container {
+	.sb__container {
 		display: flex;
-		align-items: center;
 		align-items: center;
 		-webkit-box-pack: justify;
 		justify-content: space-between;
 	}
 
-	@at-root .searchbar__logo {
-		margin-right: 16px;
+	.sb__logo {
 		img {
 			width: auto;
 			height: auto;
 		}
 	}
 
-	@at-root .searchbar__searchBox {
-		max-width: 670px;
+	.sb__searchBox {
 		margin-left: auto;
 		margin-right: auto;
 		position: relative;
@@ -55,25 +53,22 @@
 		::placeholder {
 			font-size: 15px;
 		}
-		@at-root .searchbar__searchBox__icon {
+		.sb__searchBox__icon {
 			position: absolute;
 			color: rgb(125, 135, 156);
-			left: 1rem;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			z-index: 1;
 			cursor: unset;
 		}
-		@at-root .searchbar__searchBox__search {
+		.sb__searchBox__search {
 			width: 100%;
 			position: relative;
 			cursor: unset;
 			input {
 				width: 100%;
-				height: 44px;
 				flex: 1 1 0px;
-				padding: 8px 11.5rem 6px 3rem;
 				color: rgb(43, 52, 69);
 				border: 1px solid rgb(218, 225, 231);
 				border-radius: 300px;
@@ -83,14 +78,13 @@
 				}
 				&:active,
 				&:focus {
-					outline-color: rgb(233, 69, 96);
-					border-color: rgb(233, 69, 96);
+					outline-color: $color-primary;
+					border-color: $color-primary;
 					box-shadow: rgb(255 225 230 / 10%) 1px 1px 8px 4px;
 				}
 			}
 		}
-		@at-root .searchbar__searchBox__categories {
-			width: 20%;
+		.sb__searchBox__categories {
 			padding: 10px;
 			position: absolute;
 			right: 0px;
@@ -101,6 +95,115 @@
 		}
 	}
 
-	@at-root .searchbar__icons {
+	.sb__icons {
+		.sb__searchIcon {
+		}
+	}
+}
+
+@media (max-width: 509px) {
+	.e_searchBar {
+		&.active {
+			// transition: 0.5s;
+			.sb__container {
+			}
+			.sb__logo {
+				height: 38px;
+			}
+			.sb__searchBox {
+				height: 38px;
+				input,
+				.sb__searchBox__categories {
+					height: 38px;
+				}
+			}
+		}
+
+		.sb__container {
+		}
+
+		.sb__logo {
+			margin-right: 16px;
+			img {
+			}
+		}
+
+		.sb__searchBox {
+			// max-width: 670px;
+			display: none;
+			::placeholder {
+			}
+			.sb__searchBox__icon {
+			}
+			.sb__searchBox__search {
+			}
+			.sb__searchBox__categories {
+			}
+		}
+
+		.sb__icons {
+			.sb__searchIcon {
+			}
+		}
+	}
+}
+@media (min-width: 600) and (max-width: 899px) {
+}
+@media (min-width: 900px) {
+	.e_searchBar {
+		&.active {
+			// transition: 0.5s;
+			.sb__container {
+			}
+			.sb__logo {
+				height: 38px;
+			}
+			.sb__searchBox {
+				height: 38px;
+				input,
+				.sb__searchBox__categories {
+					height: 38px;
+				}
+			}
+		}
+
+		.sb__container {
+		}
+
+		.sb__logo {
+			margin-right: 16px;
+			img {
+			}
+		}
+
+		.sb__searchBox {
+			// max-width: 670px;
+			max-width: 460px;
+			::placeholder {
+			}
+			.sb__searchBox__icon {
+				left: 1rem;
+			}
+			.sb__searchBox__search {
+				input {
+					height: 44px;
+					padding: 8px 11.5rem 6px 3rem;
+					&:hover {
+					}
+					&:active,
+					&:focus {
+					}
+				}
+			}
+			.sb__searchBox__categories {
+				width: 20%;
+			}
+		}
+
+		.sb__icons {
+			.sb__searchIcon {
+				display: none;
+			}
+		}
 	}
 }

@@ -1,3 +1,4 @@
+import { Box, Container } from "@mui/material";
 import React, { memo } from "react";
 import { IconContext } from "react-icons";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
@@ -8,7 +9,7 @@ import ProductCard from "../Card/ProductCard/index.jsx";
 const SampleNextArrow = (props) => {
 	const { onClick } = props;
 	return (
-		<div className="control-btn" onClick={onClick}>
+		<Box className="control-btn" onClick={onClick}>
 			<button className="next">
 				<IconContext.Provider
 					value={{
@@ -17,14 +18,14 @@ const SampleNextArrow = (props) => {
 					<HiArrowSmRight />
 				</IconContext.Provider>
 			</button>
-		</div>
+		</Box>
 	);
 };
 
 const SamplePrevArrow = (props) => {
 	const { onClick } = props;
 	return (
-		<div className="control-btn" onClick={onClick}>
+		<Box className="control-btn" onClick={onClick}>
 			<button className="prev">
 				<IconContext.Provider
 					value={{
@@ -33,7 +34,7 @@ const SamplePrevArrow = (props) => {
 					<HiArrowSmLeft />
 				</IconContext.Provider>
 			</button>
-		</div>
+		</Box>
 	);
 };
 
@@ -42,7 +43,7 @@ const FlashDeals = ({ addToCart }) => {
 		dots: false,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 4,
+		slidesToShow: 5,
 		slidesToScroll: 1,
 		nextArrow: <SampleNextArrow />,
 		prevArrow: <SamplePrevArrow />,
@@ -80,13 +81,13 @@ const FlashDeals = ({ addToCart }) => {
 
 	return (
 		<>
-			<section className="e_flashDeal">
-				<div className="container">
+			<Box component="section" className="e_flashDeal">
+				<Container maxWidth="lg">
 					{/* Header Start */}
-					<div className="heading f_flex">
+					<Box className="heading f_flex">
 						<i className="fa fa-bolt"></i>
 						<h1>Flash Delas</h1>
-					</div>
+					</Box>
 					{/* Header End */}
 
 					{/* Body Start */}
@@ -107,8 +108,8 @@ const FlashDeals = ({ addToCart }) => {
 						))}
 					</Slider>
 					{/* Body End */}
-				</div>
-			</section>
+				</Container>
+			</Box>
 		</>
 	);
 };

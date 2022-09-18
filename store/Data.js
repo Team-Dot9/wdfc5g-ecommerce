@@ -1,5 +1,25 @@
 export const productItems = [
 	{
+		id: 11,
+		discount: 50,
+		cover: "/images/flash/flash-1.png",
+		name: "Shoes",
+		price: {
+			regular: 100.0,
+			special: 80.0,
+		},
+	},
+	{
+		id: 22,
+		discount: 40,
+		cover: "/images/flash/flash-2.png",
+		name: "Watch",
+		price: {
+			regular: 100.0,
+			special: "",
+		},
+	},
+	{
 		id: 1,
 		discount: 50,
 		cover: "/images/flash/flash-1.png",
@@ -62,6 +82,20 @@ export const productItems = [
 ];
 
 export const shopItems = [
+	{
+		id: 79,
+		cover: "/images/shops/shops-1.png",
+		name: "Mapple Earphones",
+		price: "180",
+		discount: "25",
+	},
+	{
+		id: 89,
+		cover: "/images/shops/shops-2.png",
+		name: "Vivo android one",
+		price: "120",
+		discount: "10",
+	},
 	{
 		id: 7,
 		cover: "/images/shops/shops-1.png",
